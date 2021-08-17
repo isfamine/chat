@@ -50,9 +50,10 @@ class SqfliteDatasource implements IDatasource {
         GROUP BY chat_id
       ) AS latest_messages
       INNER JOIN messages
-      ON messages.chat_id = latest_messages.chat_id
+      ON messages.chat_id = lastest_messages.chat_id
       AND messages.created_at = latest_messages.created_at
-      ORDER BY messages.created_at DESC''');
+       ''');
+      // ORDER BY messages.created_at DESC''');
 
       if (chatsWithLatestMessage.isEmpty) return [];
 
@@ -64,11 +65,12 @@ class SqfliteDatasource implements IDatasource {
       ''', ['deliverred']);
 
       return chatsWithLatestMessage.map<Chat>((row) {
-        final int unread = chatsWithUnreadMessages.firstWhere(
+          final int unread = int.tryParse(chatsWithUnreadMessages.firstWhere(
+        //final int unread = chatsWithUnreadMessages.firstWhere(
             (ele) => row['chat_id'] == ele['chat_id'],
-            orElse: () => {'unread': 0})['unread'];
-
-        final chat = Chat.fromMap({"id": row['chat_id']});
+            orElse: () => {'unread': 0})['unread']);
+        final chat = Chat.fromMap(row);
+        // final chat = Chat.fromMap({"id": row['chat_id']});
         chat.unread = unread;
         chat.mostRecent = LocalMessage.fromMap(row);
         return chat;

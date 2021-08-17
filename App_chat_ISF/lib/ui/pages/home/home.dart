@@ -1,13 +1,13 @@
 //@dart=2.3
 import 'package:app_chat/ui/widgets/home/chats/chats.dart';
 import 'package:app_chat/ui/widgets/home/profile_image.dart';
-import 'package:chat/chat.dart';
+// import 'package:chat/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:app_chat/states_management/home/chats_cubit.dart';
+//import 'package:app_chat/states_management/home/chats_cubit.dart';
 import 'package:app_chat/states_management/home/home_cubit.dart';
 import 'package:app_chat/states_management/home/home_state.dart';
-import 'package:app_chat/states_management/message/message_bloc.dart';
+// import 'package:app_chat/states_management/message/message_bloc.dart';
 //import 'package:app_chat/ui/pages/home/home_router.dart';
 //import 'package:app_chat/ui/widgets/home/active/active_users.dart';
 //import 'package:app_chat/ui/widgets/home/chats/chats.dart';
@@ -23,22 +23,22 @@ class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
-
-class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
+  class _HomeState extends State<Home> {
+// class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
   // User _user;
   @override
   void initState() {
     super.initState();
-     context.read<ChatsCubit>().chats();
+    //  context.read<ChatsCubit>().chats();
     context.read<HomeCubit>().activeUsers();
-    final user = User.fromJson({
-      "id": "a8022936-bb24-47f4-afd8-6e84becd5681",
-      "active": true,
-      "photo_url": '',
-      "last_seen": DateTime.now()
-    });
+    // final user = User.fromJson({
+    //   "id": "a8022936-bb24-47f4-afd8-6e84becd5681",
+    //   "active": true,
+    //   "photo_url": '',
+    //   "last_seen": DateTime.now()
+    // });
 
-    context.read<MessageBloc>().add(MessageEvent.onSubscribed(user));
+    // context.read<MessageBloc>().add(MessageEvent.onSubscribed(user));
 
     // _user = widget.me;
     // _initialSetup();
@@ -133,6 +133,6 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
   //   context.read<MessageBloc>().add(MessageEvent.onSubscribed(user));
   // }
 
-  @override
-  bool get wantKeepAlive => true;
+  // @override
+  // bool get wantKeepAlive => true;
 }

@@ -8,14 +8,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:app_chat/data/datasources/sqflite_datasource.dart';
 // import 'package:app_chat/data/factories/db_factory.dart';
 import 'package:app_chat/data/services/image_uploader.dart';
-import 'package:app_chat/states_management/home/home_cubit.dart';
+// import 'package:app_chat/states_management/home/home_cubit.dart';
 //import 'package:app_chat/states_management/message/message_bloc.dart';
 //import 'package:app_chat/states_management/message_thread/message_thread_cubit.dart';
 import 'package:app_chat/states_management/onboarding/onboarding_cubit.dart';
 import 'package:app_chat/states_management/onboarding/profile_image_cubit.dart';
 //import 'package:app_chat/states_management/receipt/receipt_bloc.dart';
 //import 'package:app_chat/states_management/typing/typing_notification_bloc.dart';
-import 'package:app_chat/ui/pages/home/home.dart';
+//import 'package:app_chat/ui/pages/home/home.dart';
 //import 'package:app_chat/ui/pages/home/home_router.dart';
 //import 'package:app_chat/ui/pages/message_thread/message_thread.dart';
 import 'package:app_chat/ui/pages/onboarding/onboarding.dart';
@@ -82,32 +82,32 @@ class CompositionRoot {
      // child: Onboarding(router),
     );
   }
-  static Widget composeHomeUi() {
-    HomeCubit homeCubit = HomeCubit(_userService);
-  //   MessageBloc messageBloc = MessageBloc(_messageService);
-  // // static Widget composeHomeUi(User me) {
-  // //   HomeCubit homeCubit = HomeCubit(_userService, _localCache);
-  //   ChatsViewModel viewModel = ChatsViewModel(_datasource, _userService);
-  //   ChatsCubit chatsCubit = ChatsCubit(viewModel);
-  //   //IHomeRouter router = HomeRouter(showMessageThread: composeMessageThreadUi);
+  // static Widget composeHomeUi() {
+  //   HomeCubit homeCubit = HomeCubit(_userService);
+  // //   MessageBloc messageBloc = MessageBloc(_messageService);
+  // // // static Widget composeHomeUi(User me) {
+  // // //   HomeCubit homeCubit = HomeCubit(_userService, _localCache);
+  // //   ChatsViewModel viewModel = ChatsViewModel(_datasource, _userService);
+  // //   ChatsCubit chatsCubit = ChatsCubit(viewModel);
+  // //   //IHomeRouter router = HomeRouter(showMessageThread: composeMessageThreadUi);
 
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (BuildContext context) => homeCubit)],
-   // BlocProvider :[
-                    //create: (BuildContext context) => messageBloc,
-          //create: (BuildContext context) => _messageBloc,
-       // ),
+  //   return MultiBlocProvider(
+  //     providers: [
+  //       BlocProvider(create: (BuildContext context) => homeCubit)],
+  //  // BlocProvider :[
+  //                   //create: (BuildContext context) => messageBloc,
+  //         //create: (BuildContext context) => _messageBloc,
+  //      // ),
         
-      //  BlocProvider(create: (BuildContext context) => _typingNotificationBloc),
-       // BlocProvider(create: (BuildContext context) => chatsCubit)
-        //BlocProvider(create: (BuildContext context) => _chatsCubit)
-     // ],
-       child: Home(),
-     // // child: Home(me),
-     // // child: Home(me, router),
-    );
-  }
+  //     //  BlocProvider(create: (BuildContext context) => _typingNotificationBloc),
+  //      // BlocProvider(create: (BuildContext context) => chatsCubit)
+  //       //BlocProvider(create: (BuildContext context) => _chatsCubit)
+  //    // ],
+  //      child: Home(),
+  //    // // child: Home(me),
+  //    // // child: Home(me, router),
+  //   );
+  // }
 
   // static Widget composeMessageThreadUi(User receiver, User me,
   //     {String chatId}) {

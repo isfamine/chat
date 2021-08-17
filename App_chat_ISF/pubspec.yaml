@@ -32,9 +32,9 @@ dependencies:
   google_fonts: ^2.0.0
   http: ^0.13.2
   image_picker: ^0.8.3+2
-  intl: ^0.17.0
+  #intl: ^0.17.0
   mockito: ^4.1.0
-  path: ^1.8.0
+ # path: ^1.8.0
   rethinkdb_dart: ^2.3.2+6
   shared_preferences: ^2.0.6
   sqflite: ^2.0.0+3

@@ -26,7 +26,8 @@ class LocalMessage {
         from: json['sender'],
         to: json['receiver'],
         contents: json['contents'],
-        timestamp:  json['timestamp']);
+        timestamp: DateTime.parse(json['received_at']));
+        
 
     final localMessage = LocalMessage(
         json['chat_id'], message, EnumParsing.fromString(json['receipt']));

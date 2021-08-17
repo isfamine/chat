@@ -99,7 +99,7 @@ class CompositionRoot {
         //BlocProvider(create: (BuildContext context) => _chatsCubit)
       ],
       child: Home(me),
-      //child: Home(me, router),
+      // //child: Home(me, router),
     );
   }
 
